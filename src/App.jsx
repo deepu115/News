@@ -1,15 +1,15 @@
-import React from 'react';
+
 import Headlines from './Components/Headlines';
-import ArticleSummary from './Components/ArticleSummary';
 
 const App = () => {
   return (
     <div>
-      <Headlines />
-      <ArticleSummary />
+      <h1>News Today</h1>
+      <Headlines newsDisplay={10} />
     </div>
   );
 };
 
 export default App;
+
 
