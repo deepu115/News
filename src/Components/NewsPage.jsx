@@ -23,7 +23,7 @@ const NewsPage = () => {
 
     return (
         <div>
-            {loading ? <div>Loading...</div> : <Headlines newsDisplay={5} newsData={newsData} />}
+            {loading ? <div>Loading...</div> : <Headlines newsData={newsData} />}
         </div>
     );
 };

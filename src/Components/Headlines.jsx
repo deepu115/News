@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
 const Headlines = ({ newsDisplay, newsData }) => {
     const [headlines, setHeadlines] = useState([]);
 
@@ -21,11 +20,14 @@ const Headlines = ({ newsDisplay, newsData }) => {
                                 className="card-img-top"
                                 data-testid="headline-image"
                             />
+
+
                             <div className="card-body">
                                 <h2 className="card-title" data-testid="headline-title">
                                     {headline.fields.headline}
                                 </h2>
                             </div>
+
                         </div>
                     </div>
                 ))}

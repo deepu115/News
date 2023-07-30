@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import NewsPage from './Components/NewsPage';
 import Header from './Components/Header';
 import Footer from './Components/Footer'
@@ -9,9 +9,9 @@ const App = () => {
     <Router>
       <Header />
       <div>
-        <Switch>
-          <Route path="/news" component={NewsPage} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<NewsPage />} />
+        </Routes>
       </div>
       <Footer />
     </Router>
