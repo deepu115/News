@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import NewsPage from '../src/Components/NewsPage';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
