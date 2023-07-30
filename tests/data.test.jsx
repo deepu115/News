@@ -7,7 +7,7 @@ describe('GET request tests', () => {
     it('should actually make the external data call', async () => {
         const mock = new MockAdapter(axios);
 
-        // Mocking the axios.get function to resolve with the mockNewsData
+        // Arrange
         mock.onGet('http://localhost:5000/mockApiResponse').reply(200, mockNewsData.mockApiResponse);
 
         // Act

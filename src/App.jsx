@@ -1,11 +1,10 @@
-
-import Headlines from './Components/Headlines';
+import NewsPage from './Components/NewsPage';
 
 const App = () => {
   return (
     <div>
       <h1>News Today</h1>
-      <Headlines newsDisplay={10} />
+      <NewsPage />
     </div>
   );
 };

@@ -1,19 +1,13 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { fetchHeadlines } from '../Utilities/data';
 
-
-const Headlines = ({ newsDisplay }) => {
+const Headlines = ({ newsDisplay, newsData }) => {
     const [headlines, setHeadlines] = useState([]);
 
     useEffect(() => {
-        const fetchData = async () => {
-            const headlinesData = await fetchHeadlines(newsDisplay);
-            setHeadlines(headlinesData);
-        };
-
-        fetchData();
-    }, [newsDisplay]);
+        // Updated headlines when newsData prop changes
+        setHeadlines(newsData.slice(0, newsDisplay));
+    }, [newsData, newsDisplay]);
 
     return (
         <div className="container mt-4">
@@ -23,11 +17,14 @@ const Headlines = ({ newsDisplay }) => {
                         <div className="card bg-primary text-white">
                             <img
                                 src={headline.fields.thumbnail}
-                                alt={headline.webTitle}
+                                alt={headline.fields.headline}
                                 className="card-img-top"
+                                data-testId="headline-image"
                             />
                             <div className="card-body">
-                                <h2 className="card-title">{headline.fields.headline}</h2>
+                                <h2 className="card-title" data-testId="headline-title">
+                                    {headline.fields.headline}
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -39,10 +36,12 @@ const Headlines = ({ newsDisplay }) => {
 
 Headlines.propTypes = {
     newsDisplay: PropTypes.number,
+    newsData: PropTypes.arrayOf(PropTypes.object),
 };
 
 Headlines.defaultProps = {
-    newsDisplay: 5,
+    newsDisplay: 10,
+    newsData: [],
 };
 
 export default Headlines;
