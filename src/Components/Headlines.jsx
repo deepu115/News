@@ -19,10 +19,10 @@ const Headlines = ({ newsDisplay, newsData }) => {
                                 src={headline.fields.thumbnail}
                                 alt={headline.fields.headline}
                                 className="card-img-top"
-                                data-testId="headline-image"
+                                data-testid="headline-image"
                             />
                             <div className="card-body">
-                                <h2 className="card-title" data-testId="headline-title">
+                                <h2 className="card-title" data-testid="headline-title">
                                     {headline.fields.headline}
                                 </h2>
                             </div>
