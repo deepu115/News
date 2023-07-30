@@ -21,4 +21,5 @@ describe('NewsPage Component Tests', () => {
         //Assert
         expect(screen.getByText('Loading...')).toBeInTheDocument();
     });
+
 });

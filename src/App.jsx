@@ -1,10 +1,13 @@
 import NewsPage from './Components/NewsPage';
+import Header from './Components/Header';
+import Footer from './Components/Footer'
 
 const App = () => {
   return (
     <div>
-      <h1>News Today</h1>
+      <Header />
       <NewsPage />
+      <Footer />
     </div>
   );
 };
