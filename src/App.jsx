@@ -1,14 +1,21 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NewsPage from './Components/NewsPage';
 import Header from './Components/Header';
 import Footer from './Components/Footer'
 
+
 const App = () => {
   return (
-    <div>
+    <Router>
       <Header />
-      <NewsPage />
+      <div>
+        <Switch>
+          <Route path="/news" component={NewsPage} />
+        </Switch>
+      </div>
       <Footer />
-    </div>
+    </Router>
+
   );
 };
 
