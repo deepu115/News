@@ -1,19 +1,20 @@
-// NewsPage.js
 import { useState, useEffect } from 'react';
 import { fetchHeadlines } from '../Utilities/data';
 import Headlines from './Headlines';
 
 const NewsPage = () => {
+    const [loading, setLoading] = useState(true);
     const [newsData, setNewsData] = useState([]);
 
     useEffect(() => {
-        // Fetch the news data when the component mounts
         const fetchData = async () => {
             try {
                 const headlinesData = await fetchHeadlines();
                 setNewsData(headlinesData);
             } catch (error) {
-                console.error('Error Loading news data:', error);
+                console.error('Error loading news data:', error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -21,8 +22,10 @@ const NewsPage = () => {
     }, []);
 
     return (
-
-        <Headlines newsData={newsData} />);
+        <div>
+            {loading ? <div>Loading...</div> : <Headlines newsDisplay={5} newsData={newsData} />}
+        </div>
+    );
 };
 
 export default NewsPage;
